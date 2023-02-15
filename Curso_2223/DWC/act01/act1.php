@@ -21,17 +21,17 @@
 
         $len = strlen($nombreCiudad);
 
-        foreach ($arrayCiudades as $a) {
+        foreach ($arrayCiudades as $name) {
 
-            if (stristr($nombreCiudad, substr($a['Name'], 0, $len))) {
+            if (stristr($nombreCiudad, substr($name['Name'], 0, $len))) {
 
                 if ($hint === "") {
 
-                    $hint = $a['Name'];
+                    $hint = $name['Name'];
 
                 } else {
 
-                    $hint .= ", " . $a['Name'];
+                    $hint .= ", " . $name['Name'];
 
                 }
             }
