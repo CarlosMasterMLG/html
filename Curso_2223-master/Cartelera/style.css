@@ -1,0 +1,54 @@
+*{
+    margin: 0px;
+    padding: 0px;
+} /* margin es el margen exterior. padding, margen interior */
+.contenedor{
+    background-image: url(./imgs/retro_wave.gif);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+.primera_caja{
+    height: 10%;
+    padding: 10px;
+}
+.segunda_caja{
+    height: 50%;
+}
+.primera_columna{
+    float:left;
+    height: 100%;
+    width:25%;
+    text-align: center;
+}
+.segunda_columna{
+    text-align: center;
+    float:left;
+    height: 100%;
+    width:49%;
+}
+.tercera_columna{
+    float:left;
+    height: 100%;
+    width: 25%;
+    text-align: center;
+}
+img{
+    height: 100%;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    display: block;
+}
+h1{
+    font-size: 75px;
+    color: white;
+}
+
+a{
+    font-size: 25px;
+    color: white;
+}

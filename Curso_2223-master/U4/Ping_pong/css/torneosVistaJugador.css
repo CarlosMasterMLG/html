@@ -1,0 +1,58 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: black;
+}
+.bloque{
+    position: relative;
+    margin: 10% auto 0;
+    width: 80%;
+    height: 600px;
+    background: black;
+}
+.brillo::before, .brillo::after{
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #e6fb04,#ff6600,#00ff66,#00ffff,#ff00ff,#ff0099,#6e0dd0,#ff3300,#099fff);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: brilloAnimacion 20s linear infinite;
+}
+@keyframes brilloAnimacion {
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+}
+.brillo::after{
+    filter: blur(40px);
+}
+
+table, th, td{
+    border: 1px solid rgb(44,44,44);
+    border-collapse: collapse;
+    color: hsl(120, 77%, 54%);
+    letter-spacing: 0.1em;
+}
+table{
+    width: 100%;
+    height: 100%;
+}
+.identificador{
+    background-color: rgb(44,44,44);
+}
+.crear{
+    height: 40px;
+    background-color: rgb(44,44,44);
+}

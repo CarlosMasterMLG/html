@@ -1,0 +1,168 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+} /* margin es el margen exterior. padding, margen interior */
+.primera_caja{
+    height: 10%;
+    padding: 10px;
+}
+.segunda_caja{
+    height: 50%;
+}
+.primera_columna{
+    margin-left: 5%;
+    margin-top: 8%;
+    float:left;
+    height: 100%;
+    width:20%;
+}
+.segunda_columna{
+    margin-top: -10%;
+    text-align: center;
+    float:left;
+    height: 100%;
+    width: 50%;
+}
+.tercera_columna{
+    margin-left: 5%;
+    margin-top: 8%;
+    float:left;
+    height: 100%;
+    width: 20%;
+}
+body{
+    min-height: 100vh;
+    background: #050505;
+}
+.cocinero{
+    margin-left: -70px;
+}
+
+.cube{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg);
+    animation: animate 4s linear infinite;
+}
+@keyframes animate {
+    0%{
+        transform: rotateX(-30deg) rotateY(0deg);
+    }
+    100%{
+        transform: rotateX(-30deg) rotateY(360deg); /*Ajustar velocidad*/
+    }
+}
+.cube div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+.cube div span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#151515, #00ec00);
+    transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+}
+.cube div span img{
+    position: absolute;
+    object-fit: cover;
+    width:100%;
+    height:100%;
+}
+.cube div span h2:nth-child(1){
+    transform: translateZ(0) translateY(20px);
+}
+.top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: #222;
+    transform: rotateX(90deg) translateZ(150px); /*Entiendo que rotate es para girar el div y el translate para cambiar de posicion*/
+}
+.top::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: #0f0;
+    transform: translateZ(-360px);
+    filter: blur(20px);
+    box-shadow: 0 0 120px rgba(0, 255, 0, 0.2),
+    0 0 200px rgba(0, 255, 0, 0.4),
+    0 0 300px rgba(0, 255, 0, 0.6), 
+    0 0 400px rgba(0, 255, 0, 0.8), 
+    0 0 500px rgba(0, 255, 0, 0.1)
+}
+
+
+:root{
+    --clr-neon: hsl(120, 77%, 54%);
+    --clr-bg: hsl(323 21% 16%);
+}
+.neon-button, .neon-title{
+    margin-top: 20%;
+    font-size: 4rem;
+
+    display: inline-block;
+    text-decoration: none;
+    color: var(--clr-neon);
+    border: var(--clr-neon) 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+
+    text-shadow: 0 0 0.25em var(--clr-neon),
+    0 0 0.45em currentColor;
+
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon); /*el inset es para que la sombra sea hacia dentro en vez de hacia fuera*/
+
+    position: relative;
+}
+.neon-button::before, .neon-title::before{
+    pointer-events: none;
+    content: '';
+    position: absolute;
+    background: var(--clr-neon);
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+}
+.neon-button::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em var(--clr-neon);
+    opacity: 0;
+    transition: opacity 100ms linear;
+}
+.neon-button:hover{
+    background: var(--clr-neon);
+    color: var(--clr-bg);
+    text-shadow: none;
+}
+.neon-button:hover::before{
+    opacity: 1;
+}
+.neon-button:hover::after{
+    opacity: 1;
+}

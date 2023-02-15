@@ -1,0 +1,132 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+:root{
+    --clr-neon: hsl(120, 77%, 54%);
+    --clr-bg: hsl(323 21% 16%);
+}
+.contenedor{
+    color: var(--clr-neon);
+    text-align: center;
+    font-size: 25px;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(45deg,#d2001a, #7462ff, #23d5ab);
+    background-size: 300% 300%;
+    animation: color 6s ease-in-out infinite;
+}
+@keyframes color {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+.caja1{
+    height: 18%;
+}
+.caja1 a{
+    float: left;
+    margin-top: 12px;
+    margin-left: 11%;
+    font-size: 0.75em;
+    color: var(--clr-neon);
+    text-decoration: none;
+}
+.caja2{
+    height: 80%;
+}
+.titulo{
+    padding-top: 4%;
+}
+.rondas{
+    margin-top: 6%;
+    padding: 4%;
+    height: 6%;
+}
+.partido1{
+    margin-top: 6%;
+    padding: 4%;
+    border: 2px solid var(--clr-neon);
+    height: 45px;
+    background: var(--clr-bg);
+}
+.espacio{
+    margin-top: 6%;
+    height: 2%;
+}
+.partido2{
+    margin-top: 25%;
+    margin-bottom: 23%;
+    padding: 4%;
+    border: 2px solid var(--clr-neon);
+    height: 45px;
+    background: var(--clr-bg);
+}
+.espacio2{
+    margin-top: 1%;
+    height: 2%;
+}
+.partido3{
+    margin-top: 70%;
+    margin-bottom: 50%;
+    padding: 4%;
+    border: 2px solid var(--clr-neon);
+    height: 45px;
+    background: var(--clr-bg);
+}
+.espacio3{
+    margin-top: 1%;
+    height: 4%;
+}
+.ganador{
+    margin-top: 140%;
+    padding: 4%;
+    border: 2px solid var(--clr-neon);
+    height: 45px;
+    background: var(--clr-bg);
+}
+.borde{
+    float: left;
+    height: 100%;
+    width: 11.1%;
+}
+.primera_ronda{
+    float: left;
+    height: 100%;
+    width: 11.1%;
+}
+.segunda_ronda{
+    float: left;
+    height: 100%;
+    width: 11.1%;
+}
+.tercera_ronda{
+    float: left;
+    height: 100%;
+    width: 11.1%;
+}
+.cuarta_ronda{
+    float: left;
+    height: 100%;
+    width: 11.1%;
+}
+.semi_finales{
+    float: left;
+    height: 100%;
+    width: 11.1%;
+}
+.final{
+    float: left;
+    height: 100%;
+    width: 11.1%;
+}
+a{
+    text-decoration: none;
+    color: var(--clr-neon);
+}

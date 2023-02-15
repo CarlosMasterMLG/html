@@ -1,0 +1,208 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: black;
+}
+.bloque{
+    position: relative;
+    margin-left: 32%;
+    margin-top: 40%;
+    width: 40%;
+    height: 400px;
+    background: black;
+}
+.brillo::before, .brillo::after{
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #e6fb04,#ff6600,#00ff66,#00ffff,#ff00ff,#ff0099,#6e0dd0,#ff3300,#099fff);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: brilloAnimacion 20s linear infinite;
+}
+@keyframes brilloAnimacion {
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+}
+.brillo::after{
+    filter: blur(40px);
+}
+
+table, th, td{
+    border: 1px solid rgb(44,44,44);
+    border-collapse: collapse;
+    color: hsl(120, 77%, 54%);
+    letter-spacing: 0.1em;
+}
+table{
+    width: 100%;
+    height: 100%;
+}
+.ficha{
+    border: none;
+}
+.espacio{
+    height: 30px;
+}
+
+
+
+
+.primera_caja{
+    height: 10%;
+    padding: 10px;
+}
+.segunda_caja{
+    height: 50%;
+}
+.primera_columna{
+    margin-left: 5%;
+    margin-top: 8%;
+    float:left;
+    height: 100%;
+    width:20%;
+}
+.segunda_columna{
+    margin-top: -10%;
+    text-align: center;
+    float:left;
+    height: 100%;
+    width: 50%;   
+}
+.tercera_columna{
+    margin-left: 5%;
+    margin-top: 8%;
+    float:left;
+    height: 100%;
+    width: 20%;
+}
+
+
+
+.cube{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg);
+    animation: animate 4s linear infinite;
+}
+@keyframes animate {
+    0%{
+        transform: rotateX(-30deg) rotateY(0deg);
+    }
+    100%{
+        transform: rotateX(-30deg) rotateY(360deg); /*Ajustar velocidad*/
+    }
+}
+.cube div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+.cube div span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#151515, #00ec00);
+    transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+}
+.cube div span img{
+    position: absolute;
+    object-fit: cover;
+    width:100%;
+    height:100%;
+}
+.cube div span h2:nth-child(1){
+    transform: translateZ(0) translateY(20px);
+}
+.top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: #222;
+    transform: rotateX(90deg) translateZ(150px); /*Entiendo que rotate es para girar el div y el translate para cambiar de posicion*/
+}
+.top::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(45deg, #e6fb04,#ff6600,#00ff66,#00ffff,#ff00ff,#ff0099,#6e0dd0,#ff3300,#099fff);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: brilloAnimacion 20s linear infinite;
+    transform: translateZ(-360px);
+    filter: blur(20px);
+    box-shadow: 0 0 120px rgba(0, 255, 0, 0.2),
+    0 0 200px rgba(0, 255, 0, 0.4),
+    0 0 300px rgba(0, 255, 0, 0.6), 
+    0 0 400px rgba(0, 255, 0, 0.8), 
+    0 0 500px rgba(0, 255, 0, 0.1);
+}
+:root{
+    --clr-neon: hsl(120, 77%, 54%);
+    --clr-bg: hsl(323 21% 16%);
+}
+.box{
+    position: relative;
+    margin: 280px;
+    width: 380px;
+    height: 420px;
+    background: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.box::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,var(--clr-neon),var(--clr-neon));
+    transform-origin: bottom right;
+    animation: animate2 6s linear infinite;
+}
+.box::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,var(--clr-neon),var(--clr-neon));
+    transform-origin: bottom right;
+    animation: animate2 6s linear infinite;
+    animation-delay: -3s;
+}
+@keyframes animate2 {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
