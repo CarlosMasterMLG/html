@@ -5,14 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actividad 2</title>
+    <script src="act2.js"></script>
 </head>
+<style>
+    table, tr, td{
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
+</style>
 <body>
     
     <h1>PAÏSOS</h1>
 
     <form>
-        <select name="ciudad" id="idCiudad" onchange="showHint(this.value)">
-            <option disabled selected></option>
+        <select name="letra" id="letra" onchange="showHint(this.value)">
+            <option></option>
             <option value="a">A</option>
             <option value="b">B</option>
             <option value="c">C</option>
@@ -45,8 +52,12 @@
 
     <br>
 
-    <table>
-        <tr><b>PAÏSOS</b></tr>
+    <table id="resultadoDevuelto">
+        <tr >
+            <td>
+                <b>PAÏSOS</b>
+            </td>
+        </tr>
     </table>
 
 </body>
