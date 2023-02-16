@@ -19,7 +19,7 @@ public class FactorialController : ControllerBase
     {
         OperationResult operationResult = new OperationResult();
         operationResult.Name = "factorial";
-        operationResult.Result = -1;
+        operationResult.Result = Operations.CalcularFactorial(x);
         return Ok(operationResult);
 
     }
