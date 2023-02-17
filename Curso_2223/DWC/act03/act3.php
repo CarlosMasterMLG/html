@@ -13,10 +13,14 @@
 
     while ($myrow = $resultado->fetch_assoc()) {
 
-        array_push($arrayCiudades, $myrow);
+        array_push($arrayCiudades, $myrow["Name"]);
+
 
     }
 
+    echo json_encode($arrayCiudades);
+
+/*
     $nombreCiudad = strtolower($_REQUEST["prueba"]);
     $hint = "<select style='width: 300px;' name='pais' id='pais' onchange='mostrarPaises(this.value)'>";
 
@@ -41,7 +45,7 @@
                 }
             }
         
-    }
+    }*/
 
-    echo $hint === "" ? "No hay resultados" : $hint;
+    //echo $hint === "" ? "No hay resultados" : $hint;
 ?>

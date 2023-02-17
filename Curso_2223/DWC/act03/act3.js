@@ -45,7 +45,7 @@ function init() {
 
     select2.appendChild(option);
     document.body.appendChild(select2);
-    
+    // hacer parse con el array
 }
 
 
