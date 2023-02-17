@@ -9,7 +9,7 @@ class cuerpo:
         self.ventana = ventana
 
     def dibujar(self):
-        pygame.draw.rect(self.ventana, (0, 255, 0), (self.x, self.y, 10, 10))
+        pygame.draw.rect(self.ventana, (0, 0, 0), (self.x, self.y, 10, 10))
 
     def mover(self):
         if self.dir == 0:
@@ -35,7 +35,7 @@ class manzanas:
         self.y = random.randrange(40) * 10
 
 def refrescar(ventana):
-    ventana.fill((0, 0, 0))
+    ventana.fill((0, 255, 0))
     comida.dibujar()
     for i in range(len(serpiente)):
         serpiente[i].dibujar()
