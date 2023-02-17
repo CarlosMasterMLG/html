@@ -2,7 +2,7 @@
     // contraseña en clase 12345 pero en casa es 1234
     $conexion = mysqli_connect('localhost', 'root', '12345');
     mysqli_select_db($conexion, 'world');
-    $consultaCiudades = mysqli_prepare($conexion, "SELECT Name FROM city;");
+    $consultaCiudades = mysqli_prepare($conexion, "SELECT Name FROM city order by Name;");
     $consultaCiudades->execute();
     $resultado = $consultaCiudades->get_result();
 

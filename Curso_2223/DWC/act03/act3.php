@@ -15,7 +15,7 @@
     }
 
     $nombreCiudad = strtolower($_REQUEST["ciudad"]);
-    $hint = "<tr><td><b>PAÏSOS</b></td></tr>";
+    $hint = "<select style='width: 300px;' name='pais' id='pais' onchange='mostrarPaises(this.value)'>";
 
     if ($nombreCiudad !== "") {
 
