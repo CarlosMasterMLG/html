@@ -1,4 +1,7 @@
 <?php
+    ini_set('display_errors', 'On');
+    ini_set('html_errors', 0);
+    
     // contraseña en clase 12345 pero en casa es 1234
     $conexion = mysqli_connect('localhost', 'root', '12345');
     mysqli_select_db($conexion, 'world');
@@ -14,14 +17,16 @@
 
     }
 
-    $nombreCiudad = strtolower($_REQUEST["ciudad"]);
+    $nombreCiudad = strtolower($_REQUEST["prueba"]);
     $hint = "<select style='width: 300px;' name='pais' id='pais' onchange='mostrarPaises(this.value)'>";
 
     if ($nombreCiudad !== "") {
 
         $len = strlen($nombreCiudad);
 
-        foreach ($arrayCiudades as $name) {
+        for ($i=0; $i < $nombreCiudad; $i++) { 
+            # code...
+        }
 
             if (stristr($nombreCiudad, substr($name['Name'], 0, $len))) {
 
@@ -31,11 +36,11 @@
 
                 } else {
 
-                    $hint .= "<tr><td>".$name['Name']."</td></tr>";
+                    $hint = $name['Name'];
 
                 }
             }
-        }
+        
     }
 
     echo $hint === "" ? "No hay resultados" : $hint;
